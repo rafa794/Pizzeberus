@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
+        <module name="user-crud" />
+        <module name="pizza-write" />
+        <module name="gateway-server" />
+        <module name="pizza-read" />
+        <module name="eureka-server" />
+        <module name="modelo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="modelos" target="11" />
+      <module name="pizza-read (1)" target="11" />
+      <module name="pizza-read (1) (com.hiberus)" target="11" />
+      <module name="pizza-read (2)" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config-server" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
+      <module name="modelo" options="-parameters" />
+      <module name="pizza-read" options="-parameters" />
+      <module name="pizza-read (1)" options="-parameters" />
+      <module name="pizza-read (1) (com.hiberus)" options="-parameters" />
+      <module name="pizza-read (2)" options="" />
+      <module name="pizza-write" options="-parameters" />
+      <module name="user-crud" options="-parameters" />
+    </option>
+  </component>
+</project>

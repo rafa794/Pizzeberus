@@ -1,0 +1,23 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: user-crud
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+  datasource:
+    password: admin123
+    url: jdbc:postgresql://localhost:5433/user_db
+    username: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  hibernate:
+    ddl-auto: update
+    show-sql: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

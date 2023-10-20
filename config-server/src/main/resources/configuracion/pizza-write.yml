@@ -1,0 +1,27 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: pizza-write
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+  zipkin:
+    base-url: http://localhost:9411
+  datasource:
+    password: admin123
+    url: jdbc:postgresql://localhost:5432/pizza_db
+    username: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  hibernate:
+    ddl-auto: update
+    show-sql: true
+  main:
+    allow-bean-definition-overriding: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

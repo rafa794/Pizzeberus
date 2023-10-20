@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  pizza_db:
+    image: postgres
+    container_name: pizzeberus_pizza_db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: pizza_db
+    volumes:
+      - pizza-db-data:/var/lib/postgresql/data
+
+  user_db:
+    image: postgres
+    container_name: pizzeberus_user_db
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: user_db
+    volumes:
+      - user-db-data:/var/lib/postgresql/data
+
+    networks:
+      - my_network
+
+  rabbitmq:
+    image: rabbitmq
+    container_name: pizzeberus_rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: pizzeberus
+      RABBITMQ_DEFAULT_PASS: admin123
+
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: pizzeberus_zipkin
+    ports:
+      - "9411:9411"
+
+volumes:
+  pizza-db-data:
+  user-db-data:
+
+networks:
+  my_network:
